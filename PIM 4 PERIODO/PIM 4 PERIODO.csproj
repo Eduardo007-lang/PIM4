@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D6DED27-526C-4A1B-AD4B-8ED8AE64B25A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PIM_4_PERIODO</RootNamespace>
+    <AssemblyName>PIM 4 PERIODO</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
+      <HintPath>Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
+      <HintPath>Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\..\..\..\Desktop\PimFinal\PIM\PIM 4 PERIODO\Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
+      <HintPath>..\..\gusgustavoalves\Fuzzi-transportes\FuzziTransportes\Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
+      <HintPath>..\..\gusgustavoalves\Fuzzi-transportes\FuzziTransportes\Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\..\..\Desktop\PimFinal\PIM\PIM 4 PERIODO\Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\..\gusgustavoalves\Fuzzi-transportes\FuzziTransportes\Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
+      <HintPath>..\..\gusgustavoalves\Fuzzi-transportes\FuzziTransportes\Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
+      <HintPath>..\..\gusgustavoalves\Fuzzi-transportes\FuzziTransportes\Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
+      <HintPath>..\..\gusgustavoalves\Fuzzi-transportes\FuzziTransportes\Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
+      <HintPath>..\..\gusgustavoalves\Fuzzi-transportes\FuzziTransportes\Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.ToggleSwitch">
+      <HintPath>..\..\gusgustavoalves\Fuzzi-transportes\FuzziTransportes\Framework\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.ToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>Framework\Bunifu UI WinForms 1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\Alterar.cs" />
+    <Compile Include="Dao\Conexao.cs" />
+    <Compile Include="Dao\Consultar.cs" />
+    <Compile Include="Dao\Excluir.cs" />
+    <Compile Include="Dao\Incluir.cs" />
+    <Compile Include="Model\cadveiculos.cs" />
+    <Compile Include="Model\CustomBackground.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Custom_Card.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Custom_Circular_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Custom_Conversa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Custom_DragControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Custom_MensagemEnviada.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Custom_Resize.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Abastecimento.cs" />
+    <Compile Include="Model\Atendimento.cs" />
+    <Compile Include="Model\Combustivel.cs" />
+    <Compile Include="Model\Departamento.cs" />
+    <Compile Include="Model\Destino.cs" />
+    <Compile Include="Model\Login.cs" />
+    <Compile Include="Model\Manutenção.cs" />
+    <Compile Include="Model\Multa.cs" />
+    <Compile Include="Model\Notificação.cs" />
+    <Compile Include="Model\Oficina.cs" />
+    <Compile Include="Model\Oleo.cs" />
+    <Compile Include="Model\Posto.cs" />
+    <Compile Include="Model\Salario.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\Veiculo.cs" />
+    <Compile Include="Principal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Tela Login\Tela_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Login\Tela_Login.Designer.cs">
+      <DependentUpon>Tela_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Manutenção\Tela_Cadastro_Manutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Manutenção\Tela_Cadastro_Manutencao.Designer.cs">
+      <DependentUpon>Tela_Cadastro_Manutencao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Postos\Tela_Posto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Postos\Tela_Posto.Designer.cs">
+      <DependentUpon>Tela_Posto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Usuario\Tela_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Usuario\Tela_Usuario.Designer.cs">
+      <DependentUpon>Tela_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Solicitacao\Tela_Solicitação.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Solicitacao\Tela_Solicitação.Designer.cs">
+      <DependentUpon>Tela_Solicitação.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Testes_Controle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Testes_Controle.Designer.cs">
+      <DependentUpon>Testes_Controle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Atendimento\Tela_Chat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Atendimento\Tela_Chat.Designer.cs">
+      <DependentUpon>Tela_Chat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Atendimento\Tela_Conversa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Atendimento\Tela_Conversa.Designer.cs">
+      <DependentUpon>Tela_Conversa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Departamento\Tela_Departamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Departamento\Tela_Departamento.Designer.cs">
+      <DependentUpon>Tela_Departamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Tela_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Tela_Cadastro.Designer.cs">
+      <DependentUpon>Tela_Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Veiculo\Tela_Cadastro_Veiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Veiculo\Tela_Cadastro_Veiculo.Designer.cs">
+      <DependentUpon>Tela_Cadastro_Veiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Destino\Tela_Destino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Destino\Tela_Destino.Designer.cs">
+      <DependentUpon>Tela_Destino.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Notificação\Tela_Notificação.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Notificação\Tela_Notificação.Designer.cs">
+      <DependentUpon>Tela_Notificação.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Entrega de Veiculo\Tela_Entrega_Veiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Abastecimento\Tela_Abastecimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Abastecimento\Tela_Abastecimento.Designer.cs">
+      <DependentUpon>Tela_Abastecimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Combustivel\Tela_Combustivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Combustivel\Tela_Combustivel.Designer.cs">
+      <DependentUpon>Tela_Combustivel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Oleo\Tela_Oleo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Oleo\Tela_Oleo.Designer.cs">
+      <DependentUpon>Tela_Oleo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Entrega de Veiculo\Tela_Entrega_Veiculo.Designer.cs">
+      <DependentUpon>Tela_Entrega_Veiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Home\Tela_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Home\Tela_Home.Designer.cs">
+      <DependentUpon>Tela_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Oficina\Tela_Oficina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Oficina\Tela_Oficina.Designer.cs">
+      <DependentUpon>Tela_Oficina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Redefinir Senha\RedefiniSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Redefinir Senha\RedefiniSenha.Designer.cs">
+      <DependentUpon>RedefiniSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Sac\Tela_Sac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Sac\Tela_Sac.Designer.cs">
+      <DependentUpon>Tela_Sac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Saida de Veiculo\telaSaidadeVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Saida de Veiculo\telaSaidadeVeiculo.Designer.cs">
+      <DependentUpon>telaSaidadeVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Solicitacao\Tela_Solicitacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Solicitacao\Tela_Solicitacao.Designer.cs">
+      <DependentUpon>Tela_Solicitacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Solicitacao\Tela_SolicitaçãoInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Solicitacao\Tela_SolicitaçãoInicial.Designer.cs">
+      <DependentUpon>Tela_SolicitaçãoInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Multa\Tela Multa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Cadastro\Multa\Tela Multa.Designer.cs">
+      <DependentUpon>Tela Multa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tela Principal\Tela_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tela Principal\Tela_Principal.Designer.cs">
+      <DependentUpon>Tela_Principal.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Model\Custom_Resize.resx">
+      <DependentUpon>Custom_Resize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\Tela Login\Tela_Login.resx">
+      <DependentUpon>Tela_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Cadastro\Manutenção\Tela_Cadastro_Manutencao.resx">
+      <DependentUpon>Tela_Cadastro_Manutencao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Cadastro\Postos\Tela_Posto.resx">
+      <DependentUpon>Tela_Posto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Cadastro\Usuario\Tela_Usuario.resx">
+      <DependentUpon>Tela_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Solicitacao\Tela_Solicitação.resx">
+      <DependentUpon>Tela_Solicitação.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Testes_Controle.resx">
+      <DependentUpon>Testes_Controle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Atendimento\Tela_Chat.resx">
+      <DependentUpon>Tela_Chat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Atendimento\Tela_Conversa.resx">
+      <DependentUpon>Tela_Conversa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Cadastro\Abastecimento\Tela_Abastecimento.resx">
+      <DependentUpon>Tela_Abastecimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Cadastro\Combustivel\Tela_Combustivel.resx">
+      <DependentUpon>Tela_Combustivel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Cadastro\Oleo\Tela_Oleo.resx">
+      <DependentUpon>Tela_Oleo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Cadastro\Departamento\Tela_Departamento.resx">
+      <DependentUpon>Tela_Departamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Cadastro\Tela_Cadastro.resx">
+      <DependentUpon>Tela_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Cadastro\Veiculo\Tela_Cadastro_Veiculo.resx">
+      <DependentUpon>Tela_Cadastro_Veiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Cadastro\Destino\Tela_Destino.resx">
+      <DependentUpon>Tela_Destino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Cadastro\Notificação\Tela_Notificação.resx">
+      <DependentUpon>Tela_Notificação.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Entrega de Veiculo\Tela_Entrega_Veiculo.resx">
+      <DependentUpon>Tela_Entrega_Veiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Home\Tela_Home.resx">
+      <DependentUpon>Tela_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Cadastro\Oficina\Tela_Oficina.resx">
+      <DependentUpon>Tela_Oficina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Redefinir Senha\RedefiniSenha.resx">
+      <DependentUpon>RedefiniSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Sac\Tela_Sac.resx">
+      <DependentUpon>Tela_Sac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Saida de Veiculo\telaSaidadeVeiculo.resx">
+      <DependentUpon>telaSaidadeVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Solicitacao\Tela_Solicitacao.resx">
+      <DependentUpon>Tela_Solicitacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Solicitacao\Tela_SolicitaçãoInicial.resx">
+      <DependentUpon>Tela_SolicitaçãoInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Cadastro\Multa\Tela Multa.resx">
+      <DependentUpon>Tela Multa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tela Principal\Tela_Principal.resx">
+      <DependentUpon>Tela_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="View\__Componentes__\Famework\Bunifu.Core.dll" />
+    <Content Include="View\__Componentes__\Famework\Bunifu.UI.WinForms.BunifuDataGridView.dll" />
+    <Content Include="View\__Componentes__\Famework\Bunifu.UI.WinForms.BunifuFormDock.dll" />
+    <Content Include="View\__Componentes__\Famework\Bunifu.UI.WinForms.BunifuGauge.dll" />
+    <Content Include="View\__Componentes__\Famework\Bunifu.UI.WinForms.BunifuImageButton.dll" />
+    <Content Include="View\__Componentes__\Famework\Bunifu.UI.WinForms.BunifuLabel.dll" />
+    <Content Include="View\__Componentes__\Famework\Bunifu.UI.WinForms.BunifuScrollBar.dll" />
+    <Content Include="View\__Componentes__\Famework\Bunifu.UI.WinForms.BunifuSlider.dll" />
+    <Content Include="View\__Componentes__\Famework\Bunifu.UI.WinForms.BunifuTextbox.dll" />
+    <Content Include="View\__Componentes__\Famework\Bunifu.UI.WinForms.BunifuTransition.dll" />
+    <Content Include="View\__Componentes__\Famework\Bunifu.UI.WinForms.BunifuUserControl.dll" />
+    <Content Include="View\__Componentes__\Famework\Bunifu.UI.WinForms.ToggleSwitch.dll" />
+    <Content Include="Dao\Script Criação do Banco .txt" />
+    <None Include="Resources\VOLTAR_SELECT.png" />
+    <None Include="Resources\VOLTAR.png" />
+    <None Include="Resources\POCURAR_SELECT.png" />
+    <None Include="Resources\POCURAR.png" />
+    <None Include="Resources\ENVIA_MENSAGEM_SELECT.png" />
+    <None Include="Resources\ENVIA_MENSAGEM.png" />
+    <None Include="Resources\VEÍCULO.png" />
+    <None Include="Resources\USUÁRIO.png" />
+    <None Include="Resources\SALÁRIO.png" />
+    <None Include="Resources\POSTO.png" />
+    <None Include="Resources\ÓLEO.png" />
+    <None Include="Resources\OFICINA.png" />
+    <None Include="Resources\NOTIFICAÇÃO.png" />
+    <None Include="Resources\MULTA.png" />
+    <None Include="Resources\MANUTENÇÃO.png" />
+    <None Include="Resources\DESTINO.png" />
+    <None Include="Resources\DEPARTAMENTO.png" />
+    <None Include="Resources\COMBUSTÍVEL.png" />
+    <None Include="Resources\ATENDIMENTO.png" />
+    <None Include="Resources\ABASTECIMENTO.png" />
+    <None Include="Resources\ATENDIMENTO HOVER.png" />
+    <None Include="Resources\ABASTECIMENTO HOVER.png" />
+    <None Include="Resources\COMBUSTÍVEL HOVER.png" />
+    <None Include="Resources\DEPARTAMENTO HOVER.png" />
+    <None Include="Resources\DESTINO HOVER.png" />
+    <None Include="Resources\MANUTENÇÃO HOVER.png" />
+    <None Include="Resources\MULTA HOVER.png" />
+    <None Include="Resources\NOTIFICAÇÃO HOVER.png" />
+    <None Include="Resources\OFICINA HOVER.png" />
+    <None Include="Resources\ÓLEO HOVER.png" />
+    <None Include="Resources\POSTO HOVER.png" />
+    <None Include="Resources\SALÁRIO HOVER.png" />
+    <None Include="Resources\USUÁRIO HOVER.png" />
+    <None Include="Resources\VEÍCULO HOVER.png" />
+    <None Include="Resources\SOLICITAÇÕES.png" />
+    <None Include="Resources\SOLICITAÇÕES SELECT.png" />
+    <None Include="Resources\SAC.png" />
+    <None Include="Resources\SAC SELECT.png" />
+    <None Include="Resources\RELATÓRIOS.png" />
+    <None Include="Resources\RELATÓRIOS SELECT.png" />
+    <None Include="Resources\HOME.png" />
+    <None Include="Resources\HOME SELECT.png" />
+    <None Include="Resources\CADASTRO.png" />
+    <None Include="Resources\CADASTRO SELECT.png" />
+    <None Include="Resources\ATENDIMENTOM.png" />
+    <None Include="Resources\ATENDIMENTOM SELECT.png" />
+    <None Include="Resources\ATENDIMENTO SELECT.png" />
+    <None Include="View\__Componentes__\Interface\__Icones Menu__\abastecimento.png" />
+    <None Include="View\__Componentes__\Interface\Solicitações\caminhão.png" />
+    <None Include="View\__Componentes__\Interface\Login\logo fuzzi.png" />
+    <None Include="View\__Componentes__\Interface\Login\icone botão entrar.png" />
+    <None Include="View\__Componentes__\Interface\Login\faixa login.png" />
+    <None Include="View\__Componentes__\Interface\Home\logo fuzzi.png" />
+    <None Include="View\__Componentes__\Interface\Home\icone mapa.png" />
+    <None Include="View\__Componentes__\Interface\Home\icone calendario.png" />
+    <None Include="View\__Componentes__\Interface\Home\faixa menu.png" />
+    <None Include="View\__Componentes__\Interface\Home\caminhão.png" />
+    <None Include="View\__Componentes__\Interface\Home\caixa.png" />
+    <None Include="View\__Componentes__\Interface\Atendimento\caminhão.png" />
+    <None Include="View\__Componentes__\Interface\__Icones Menu__\solicitação.png" />
+    <None Include="View\__Componentes__\Interface\__Icones Menu__\sac.png" />
+    <None Include="View\__Componentes__\Interface\__Icones Menu__\relatorios.png" />
+    <None Include="View\__Componentes__\Interface\__Icones Menu__\home.png" />
+    <None Include="View\__Componentes__\Interface\__Icones Menu__\cadastro.png" />
+    <None Include="View\__Componentes__\Interface\__Icones Menu__\atendimento.png" />
+    <None Include="View\__Componentes__\Icons\Aplication_Icon2.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

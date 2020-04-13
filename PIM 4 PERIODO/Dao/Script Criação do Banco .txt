@@ -1,0 +1,250 @@
+﻿#############################################################################
+#                             Script de Criação                             #
+#                                Banco de Dados                             #
+#############################################################################
+            
+# OBSERVAÇÕES:
+#	Banco: Pim_4_Semestre
+#	DATAS date, -> DIA/MES/ANO; HORA,MINUTO,SEGUNDO; FUSOHORARIO
+
+
+#--------------------------------X----------------------#
+#Usuarios:
+	CREATE TABLE USUARIO(
+		ID_USUARIO int not null auto_increment,
+		USERNAME varchar(40) not null,
+		SENHA varchar(40) not null,
+		DEPARTAMENTO int(10),
+		
+		NOME varchar(70) not null,
+		EMAIL varchar(60) not null, 
+		CPF varchar(11) not null,
+		TELEFONE int(14) not null,
+		CELULAR int(15) not null,
+		ENDERECO varchar(255) not null,
+		CNH int(11) not null,
+		VALIDADE_CNH date not null,
+		CATEGORIA_CNH varchar(4) not null,
+		DATA_ADIMISSAO date not null,
+
+		UNIQUE key(USERNAME),
+		UNIQUE key(EMAIL),
+		UNIQUE key(CPF),
+		UNIQUE key(TELEFONE),
+		UNIQUE key(CELULAR),
+		UNIQUE key(CNH),
+
+		primary key(ID_USUARIO)
+	);
+
+#--------------------------------X----------------------#
+#Notificações:
+	CREATE TABLE NOTIFICACAO(
+		ID_NOTIFICACAO int not null auto_increment,
+		ID_DEPARTAMENTO int not null,
+		TITULO varchar(40) not null,
+		IMAGEM varchar(255) not null,
+		DESCRICAO varchar(255) not null,
+		
+
+		primary key(ID_NOTIFICACAO)
+	);
+
+#--------------------------------X----------------------#
+#Veiculos:
+	CREATE TABLE VEICULO(
+		ID_VEICULO int not null auto_increment,
+		PLACA varchar(7) not null, 
+		MODELO varchar(50) not null, 
+		TIPO varchar(50) not null, 
+		MARCA varchar(50) not null, 
+		ANO date not null, 
+		RENAVAM int(11) not null, 
+		CHSSI_NUM varchar(17) not null,
+		KM_POR_LITRO float(8,2) not null, 
+		KM_TROCA_OLEO float(8,2) not null,
+		KM_REVISAO float(8,2) not null, 
+		KM_PNEU float(8,2) not null, 
+		CAPACIDADE_TANQUE float(8,2) not null,
+		ID_COMBUSTIVEL int not null,
+		LOCALIZACAO GEOMETRY not null,
+
+
+		primary key(ID_VEICULO)
+	);
+
+#--------------------------------X----------------------#
+#Oleo:
+	CREATE TABLE OLEO(
+		ID_OLEO int not null auto_increment,
+		NOME varchar(70) not null,
+		MARCA varchar(50) not null, 
+		LITROS float not null,
+		
+
+		primary key(ID_OLEO)
+	);
+
+#--------------------------------X----------------------#
+#Abastecimento:
+	CREATE TABLE ABASTECIMENTO(
+		ID_ABASTECIMENTO int not null auto_increment,
+		KM_NO_ABASTECIMENTO float(8,2) not null, 
+		LITROS float not null,
+		VALOR float(20,2) not null, 
+		ID_POSTO int not null,
+		ID_VEICULO int not null,
+		DATAS date not null,
+
+
+		primary key(ID_ABASTECIMENTO)
+	);
+	
+
+#--------------------------------X----------------------#
+#Combustivel:
+	CREATE TABLE COMBUSTIVEL(
+		ID_COMBUSTIVEL int not null auto_increment,
+		NOME varchar(70) not null, 
+		VALOR float(20,2) not null,
+		DATAS date not null,
+
+		primary key(ID_COMBUSTIVEL)
+	);
+
+#--------------------------------X----------------------#
+#Oficina:
+	CREATE TABLE OFICINA(
+		ID_OFICINA int not null auto_increment,
+		NOME varchar(70) not null,
+		CNPJ varchar(11) not null,
+		RAZAO_SOCIAL varchar(70) not null,
+		TELEFONE int(11) not null,
+		CELULAR int(12) not null,
+		SITE varchar(255),
+		ENDERECO varchar(255) not null,
+
+		primary key(ID_OFICINA)
+	);
+    
+#--------------------------------X----------------------#
+#Posto:
+	CREATE TABLE POSTO(
+		ID_POSTO int not null auto_increment,
+		NOME varchar(70) not null,
+		CNPJ varchar(11) not null,
+		RAZAO_SOCIAL varchar(70) not null,
+		TELEFONE int(11) not null,
+		CELULAR int(12) not null,
+		SITE varchar(255),
+		ENDERECO varchar(255) not null,
+
+		primary key(ID_POSTO)
+	);
+	
+#--------------------------------X----------------------#
+#Multa:
+	CREATE TABLE MULTA(
+		 ID_MULTA int not null auto_increment, 
+		 NUM_INFRACAO int not null, 
+		 TIPO_INFRACAO varchar(50) not null,
+		 ID_MOTORISTA int not null, 
+		 ID_VEICULO int not null,
+		 VALOR float(20,2) not null, 
+		 DATAS date not null,
+		 ENDERECO varchar(255) not null, 
+
+		primary key(ID_MULTA)
+	);
+
+#--------------------------------X----------------------#       
+#Departamento:
+	CREATE TABLE DEPARTAMENTO(
+		ID_DEPARTAMENTO int not null auto_increment,
+		NIVELACESSO int(20) not null,
+		NOME varchar(70) not null,
+
+		primary key(ID_DEPARTAMENTO)
+	);
+
+#--------------------------------X----------------------#
+#SALARIO:
+	CREATE TABLE SALARIO(
+		ID_SALARIO int not null auto_increment,
+		VALOR float(20,2) not null,
+
+		primary key(ID_SALARIO)
+	);
+
+#--------------------------------X----------------------#
+#Manutenção:
+CREATE TABLE MANUTENCAO(
+		ID_MANUTENCAO int not null auto_increment,
+		NUM_OS int not null,
+		ID_OFICINA int not null,
+		DATA_ENTRADA date,
+		DATA_SAIDA date,
+		MOTIVO varchar(200) not null, 
+		VALOR float(20,2) not null,
+		ID_VEICULO int not null,
+	
+		primary key(ID_MANUTENCAO)
+	);
+    
+#--------------------------------X----------------------#
+#Atendimento:
+CREATE TABLE ATENDIMENTO(
+		ID_ATENDIMENTO int not null auto_increment, 
+		ID_VEICULO int not null, 
+		ID_MOTORISTA int not null,
+		ID_DESTINO int not null,  
+		   
+        primary key(ID_ATENDIMENTO)
+	);
+
+#--------------------------------X--------------------------------#
+#Destino:
+CREATE TABLE DESTINO(
+		ID_DESTINO int not null auto_increment, 
+		ID_VEICULO int not null, 
+		ID_MOTORISTA int not null,
+		LOCAL_CHEGADA varchar(200) not null,
+		LOCAL_SAIDA varchar(200) not null,
+		DATA_CHEGADA date,
+		DATA_SAIDA date,
+
+        primary key(ID_DESTINO)
+	);    
+    
+#--------------------------------X--------------------------------#	
+#Chat:
+CREATE TABLE CHAT(
+		ID_CHAT int not null auto_increment, 
+		REMETENTE int not null,
+		DESTINATARIO int not null,
+		MENSAGEM varchar(500) not null,
+		DATA_HORA datetime,
+
+        primary key(ID_CHAT)
+	);    
+    
+#--------------------------------X--------------------------------#	
+
+	ALTER TABLE CHAT		  ADD FOREIGN KEY(REMETENTE)		 REFERENCES USUARIO(ID_USUARIO)			  ON DELETE RESTRICT ON UPDATE RESTRICT;
+	ALTER TABLE CHAT		  ADD FOREIGN KEY(DESTINATARIO)		 REFERENCES USUARIO(ID_USUARIO)			  ON DELETE RESTRICT ON UPDATE RESTRICT;
+	ALTER TABLE USUARIO		  ADD FOREIGN KEY(ID_DEPARTAMENTO)	 REFERENCES DEPARTAMENTO(ID_DEPARTAMENTO) ON DELETE RESTRICT ON UPDATE RESTRICT;
+	ALTER TABLE NOTIFICACAO	  ADD FOREIGN KEY(ID_DEPARTAMENTO)	 REFERENCES DEPARTAMENTO(ID_DEPARTAMENTO) ON DELETE RESTRICT ON UPDATE RESTRICT;
+	ALTER TABLE VEICULO		  ADD FOREIGN KEY(ID_COMBUSTIVEL)	 REFERENCES COMBUSTIVEL(ID_COMBUSTIVEL)	  ON DELETE RESTRICT ON UPDATE RESTRICT;
+	ALTER TABLE ABASTECIMENTO ADD FOREIGN KEY(ID_POSTO)			 REFERENCES POSTO(ID_POSTO)				  ON DELETE RESTRICT ON UPDATE RESTRICT;	
+	ALTER TABLE ABASTECIMENTO ADD FOREIGN KEY(ID_VEICULO)		 REFERENCES VEICULO(ID_VEICULO)			  ON DELETE RESTRICT ON UPDATE RESTRICT;	
+	ALTER TABLE ATENDIMENTO   ADD FOREIGN KEY(ID_MOTORISTA)		 REFERENCES USUARIO(ID_USUARIO)			  ON DELETE RESTRICT ON UPDATE RESTRICT;	
+	ALTER TABLE ATENDIMENTO   ADD FOREIGN KEY(ID_DESTINO)		 REFERENCES DESTINO(ID_DESTINO)			  ON DELETE RESTRICT ON UPDATE RESTRICT;	
+	ALTER TABLE ATENDIMENTO   ADD FOREIGN KEY(ID_VEICULO)		 REFERENCES VEICULO(ID_VEICULO)			  ON DELETE RESTRICT ON UPDATE RESTRICT;	
+	ALTER TABLE DESTINO		  ADD FOREIGN KEY(ID_VEICULO)		 REFERENCES VEICULO(ID_VEICULO)			  ON DELETE RESTRICT ON UPDATE RESTRICT;	
+	ALTER TABLE DESTINO		  ADD FOREIGN KEY(ID_MOTORISTA)		 REFERENCES USUARIO(ID_USUARIO)			  ON DELETE RESTRICT ON UPDATE RESTRICT;	
+	ALTER TABLE MANUTENCAO	  ADD FOREIGN KEY(ID_OFICINA)		 REFERENCES OFICINA(ID_OFICINA)			  ON DELETE RESTRICT ON UPDATE RESTRICT;	
+	ALTER TABLE MANUTENCAO	  ADD FOREIGN KEY(ID_VEICULO)		 REFERENCES VEICULO(ID_VEICULO)			  ON DELETE RESTRICT ON UPDATE RESTRICT;
+	ALTER TABLE ATENDIMENTO   ADD FOREIGN KEY(ID_VEICULO)		 REFERENCES VEICULO(ID_VEICULO)			  ON DELETE RESTRICT ON UPDATE RESTRICT;	
+	ALTER TABLE MULTA		  ADD FOREIGN KEY(ID_MOTORISTA)		 REFERENCES USUARIO(ID_USUARIO)			  ON DELETE RESTRICT ON UPDATE RESTRICT;
+	ALTER TABLE MULTA		  ADD FOREIGN KEY(ID_VEICULO)		 REFERENCES VEICULO(ID_VEICULO)			  ON DELETE RESTRICT ON UPDATE RESTRICT;
+
